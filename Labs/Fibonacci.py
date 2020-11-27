@@ -23,3 +23,22 @@ class Fibonacci:
         term = 0
 
     print(term)
+
+    if term <= 0:
+        print("Please Enter a Positive Whole Integer")
+    elif term == 1: #The first two terms are a small exception and require special attention
+        print(term," terms:")
+        print(first_term)
+    else:
+    #Actual Fibonacci
+        print("Your Input:",term)
+        print("Terms Requested ",term)
+        counter = 0
+
+        while counter < term:
+            calculation = first_term + second_term
+            first_term = second_term
+            second_term = calculation
+            print("\n",counter,": ",calculation)
+            counter += 1
+

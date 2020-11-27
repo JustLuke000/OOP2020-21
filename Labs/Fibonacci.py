@@ -4,10 +4,13 @@
 # date: 27-11-2020
 # purpose: Educational Game for Secondary Schools
 
-class Fibonacci:
+class Games:
+
 
     first_term = 0
     second_term = 1
+    counter = 0
+    calculation = 0
 
     try:
         term = int(input("Please Enter a Positive Whole Integer:"))
@@ -33,11 +36,34 @@ class Fibonacci:
     #Actual Fibonacci
         print("Your Input:",term)
         print("Terms Requested",term)
-        counter = 0
         while counter < term:
             print(first_term)
             calculation = first_term + second_term
             first_term = second_term
             second_term = calculation
             counter += 1
+
+    correct = 0
+    incorrect = 0
+
+    while incorrect == 0:
+
+        term = int(input("Guess the next integer in the series:"))
+
+        if term != first_term:
+            print("Incorrect")
+            incorrect += 1
+
+
+        else:
+            print("Correct")
+            correct += 1
+
+        calculation = first_term + second_term
+        first_term = second_term
+        second_term = calculation
+        counter += 1
+
+    print("You got",correct,"correct!")
+
 
